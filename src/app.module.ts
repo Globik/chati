@@ -15,15 +15,15 @@ import { TicketModule } from './ticket/ticket.module';
 @Module({
     imports: [
         ServeStaticModule.forRoot({
-            rootPath: join(__dirname, '..', 'storage/'),
+            rootPath: join(__dirname, '..', 'storage/dist'),
             exclude: ['/api*', '/join']
         }),
         AuthModule,
         ConfigModule.forRoot({
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
-        MongooseModule.forRoot('mongodb://api.chat-roulet.ru:27017/chatroulette_db'),
-//mongodb://localhost:27017',//rocess.env.MONGO_URL),
+        MongooseModule.forRoot('mongodb://localhost:2701'),
+//mongodb://localhost:27017',//rocess.env.MONGO_URL),mongodb://api.chat-roulet.ru:27017/chatroulette_db'
         UserModule,
         MessageGatewayModule,
         RoomModule,
