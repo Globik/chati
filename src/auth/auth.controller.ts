@@ -163,7 +163,7 @@ export class AuthController {
     }
 
     @HttpCode(HttpStatus.OK)
-    @Post("google-oauth")
+    @Post("https://chat-roulet.ru/google-oauth")
     async signInWithGoogle(@Body() dto: SignInWithGoogleDto){
         return this.authService.signInWithGoogle(dto).catch((e) => {
             throw e;
@@ -171,3 +171,19 @@ export class AuthController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

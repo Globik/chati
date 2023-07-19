@@ -8,7 +8,7 @@ export class LinkGoogleStrategy extends PassportStrategy(Strategy, "link-google"
     super({
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: `http://localhost:${process.env.PORT}/api/auth/google-link/redirect`,
+      callbackURL: `https://chat-roulet.ru/api/auth/google-link/redirect`,
       scope: ["email", "profile"],
     });
   }
