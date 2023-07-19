@@ -22,7 +22,7 @@ import { TicketModule } from './ticket/ticket.module';
         ConfigModule.forRoot({
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
-        MongooseModule.forRoot('mongodb://localhost:2701'),
+        MongooseModule.forRoot('mongodb://localhost:27017'),
 //mongodb://localhost:27017',//rocess.env.MONGO_URL),mongodb://api.chat-roulet.ru:27017/chatroulette_db'
         UserModule,
         MessageGatewayModule,
