@@ -34,3 +34,5 @@ import { TicketModule } from './ticket/ticket.module';
     providers: [JwtManager],
 })
 export class AppModule {}
+//    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
+// vi src/app.module.ts

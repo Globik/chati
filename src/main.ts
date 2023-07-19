@@ -29,7 +29,7 @@ async function bootstrap() {
   var port;
   if(process.env.NODE_ENV=="prod"){
 	  
-   port = 3001;
+   port = 431;
    
 }else{
 	port = process.env.PORT;
@@ -40,15 +40,14 @@ async function bootstrap() {
     .setVersion('1.0.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  let a=SwaggerModule.setup('/vk', app, document, {
-    customSiteTitle: 'Чат-рулетка',customfavIcon:''});
-    console.log(document);
+  let a=SwaggerModule.setup('/api/swagger', app, document);
+   // console.log(document);
     
-    SwaggerModule.setup('/api/swagger/vk', app, document, {
-    customSiteTitle: 'Чат-рулетка',customfavIcon:'', url:'/vk'});
+   // SwaggerModule.setup('/api/swagger/vk', app, document, {
+   // customSiteTitle: 'Чат-рулетка',customfavIcon:'', url:'/vk'});
   
  // app.useStaticAssets(join(__dirname, '..', 'storage/dist'));
- app.useStaticAssets('/home/globi/chatclient/dist');
+ app.useStaticAssets('/root/chatclient/dist');
   app.setGlobalPrefix('api');
   app.enableCors();
 
@@ -57,3 +56,22 @@ async function bootstrap() {
   await app.listen(port, () => console.log(`Server was started: http://localhost:${port}`));
 }
 bootstrap();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
