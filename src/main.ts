@@ -11,14 +11,19 @@ async function bootstrap() {
 	var appConfig = {};
 	if(process.env.NODE_ENV=="prod"){
 		const httpsOptions = {
-			key: fs.readFileSync('/home/globi/chatikon/data/key.pem'),// privkey.pem 
+			key: fs.readFileSync('/etc/letsencrypt/live/chat-roulet.ru/privkey.pem'),// privkey.pem 
 			// /root/nginx-ssl/certbot/conf/live/chat-roulet.ru/privkey.pem
 			// /root/nginx-ssl/certbot/conf/live/chat-roulet.ru/fullchain.pem
 			//root/nginx-ssl/certbot/conf/live/chat-roulet.ru/fullchain.pem
-			cert: fs.readFileSync('/home/globi/chatikon/data/cert.pem') //fullchain.pem 
+			cert: fs.readFileSync('/etc/letsencrypt/live/chat-roulet.ru/fullchain.pem') //fullchain.pem 
 		};
 		appConfig = { httpsOptions }
 	}
+	// certbot certonly --cert-name chat-roulet.ru
+
+//Certificate is saved at: /etc/letsencrypt/live/chat-roulet.ru/fullchain.pem
+//Key is saved at:         /etc/letsencrypt/live/chat-roulet.ru/privkey.pem
+
   const app = await NestFactory.create<NestExpressApplication>(AppModule, appConfig);
   
   var port;
