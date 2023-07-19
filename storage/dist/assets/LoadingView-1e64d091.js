@@ -1,0 +1,1 @@
+import{_ as t,b as s,c,e}from"./index-e6bbd6ad.js";const o={},n={class:"loading-page h-screen flex flex-col items-center justify-center"},a=e("h1",{class:"title text-xl font-bold"},"Загрузка...",-1),_=e("p",{class:"description"},"Ваша информация обрабатывается...",-1),i=[a,_];function r(l,d){return s(),c("div",n,i)}const h=t(o,[["render",r]]);export{h as default};
