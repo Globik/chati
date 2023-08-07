@@ -29,7 +29,7 @@ try{
 let r = await axios.post(onesignal_notification_url, data, { headers: headers });
 console.log("r: ", r.data);
 }catch(e){
-console.log("err: ", e.toString());
+console.log("err: ", e);
 }	
 }
 }
