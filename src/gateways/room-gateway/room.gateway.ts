@@ -9,8 +9,10 @@ import { User } from "src/user/schemas/user.schema";
 import { LeaveRoomDto } from "./dto/leaveRoom.dto";
 import { Queue } from "./queue";
 
-const onesignal_app_key = "ZjVhNjdjYTMtYWJlNS00MjQ1LTljNzctYjEzYWI0NzQxMDc5";
+const onesignal_app_key = "NWY5YmQ3NTMtMDY2ZS00NjE1LTkyY2MtOTIyZDQ0ZTEwYzgz";
+// NWY5YmQ3NTMtMDY2ZS00NjE1LTkyY2MtOTIyZDQ0ZTEwYzgz
 const onesignal_app_id = "db934412-4ede-4f65-bec7-100941d1671d";
+// "db934412-4ede-4f65-bec7-100941d1671d"
 const onesignal_notification_url = "https://onesignal.com/api/v1/notifications";
 const axios = require('axios').default;
 
