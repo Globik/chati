@@ -9,6 +9,32 @@ import { User } from "src/user/schemas/user.schema";
 import { LeaveRoomDto } from "./dto/leaveRoom.dto";
 import { Queue } from "./queue";
 
+const onesignal_app_key = "ZjVhNjdjYTMtYWJlNS00MjQ1LTljNzctYjEzYWI0NzQxMDc5";
+const onesignal_app_id = "db934412-4ede-4f65-bec7-100941d1671d";
+const onesignal_notification_url = "https://onesignal.com/api/v1/notifications";
+const axios = require('axios').default;
+
+
+async function oni(us, txt){
+	if(process.env.DEVELOPMENT !="yes"){
+
+let data = {
+		app_id: onesignal_app_id,
+		contents: {en: us + " " + txt},
+	included_segments: ["Subscribed Users"],
+		//include_player_ids: ["9a9c34d6-6c6e-4dfe-b510-20953def482f"],
+		};
+let headers = { "Authorization": "Basic " + onesignal_app_key };
+try{
+let r = await axios.post(onesignal_notification_url, data, { headers: headers });
+console.log("r: ", r.data);
+}catch(e){
+console.log("err: ", e.toString());
+}	
+}
+}
+
+
 @WebSocketGateway({ cors: true })
 export class RoomGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
@@ -24,7 +50,7 @@ export class RoomGateway implements OnGatewayConnection, OnGatewayDisconnect {
        
      this.q.set(socket.id, { socketId: socket.id, isBusy: true });
         this.server.emit("usercount", { count: this.q.size});
-        
+        oni("We are here", " chat-roulet.ru");
     }
 //   vi /root/chatroulette/chatroulette/src/gateways/room-gateway/room.gateway.ts
     async handleDisconnect(@ConnectedSocket() socket: Socket) {   
