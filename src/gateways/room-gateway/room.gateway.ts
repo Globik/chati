@@ -52,7 +52,7 @@ export class RoomGateway implements OnGatewayConnection, OnGatewayDisconnect {
        
      this.q.set(socket.id, { socketId: socket.id, isBusy: true });
         this.server.emit("usercount", { count: this.q.size});
-        oni("We are here", " chat-roulet.ru");
+        oni("We are here: ", this.q.size);
     }
 //   vi /root/chatroulette/chatroulette/src/gateways/room-gateway/room.gateway.ts
     async handleDisconnect(@ConnectedSocket() socket: Socket) {   
