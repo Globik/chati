@@ -15,7 +15,7 @@ import { TicketModule } from './ticket/ticket.module';
 @Module({
     imports: [
         ServeStaticModule.forRoot({
-            rootPath: join(__dirname, '..', 'storage/dist'),
+            rootPath: '/root/chatclient/dist',//join(__dirname, '..', 'storage/dist'),
             exclude: ['/api*', '/join']
         }),
         AuthModule,

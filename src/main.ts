@@ -48,6 +48,7 @@ async function bootstrap() {
   
  // app.useStaticAssets(join(__dirname, '..', 'storage/dist'));
  app.useStaticAssets('/root/chatclient/dist');
+ 
   app.setGlobalPrefix('api');
   app.enableCors();
 
