@@ -140,7 +140,7 @@ export class AuthController {
 	 })
   
     }
-    
+    // curl --header "Content-Type: application/json" --request POST --data '{"name":"a", "id":"2"}' https://chat-roulet.ru/api/auth/yandex-user
      @HttpCode(HttpStatus.OK)
     @Post("yandex-user")
     async getYandex(@Body() dto: getVKUser){
@@ -161,9 +161,9 @@ export class AuthController {
             throw e;
         });  
     }
-
+// curl --header "Content-Type: application/json" --request POST --data '{"name":"a", "id":"2"}' https://chat-roulet.ru/api/auth/google-oauth/
     @HttpCode(HttpStatus.OK)
-    @Post("https://chat-roulet.ru/google-oauth")
+    @Post("google-oauth")
     async signInWithGoogle(@Body() dto: SignInWithGoogleDto){
         return this.authService.signInWithGoogle(dto).catch((e) => {
             throw e;
